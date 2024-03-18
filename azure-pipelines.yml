@@ -19,12 +19,20 @@ strategy:
     Python37:
       python.version: '3.7'
 
+
+
 steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      echo 'Hello world'
 
 - script: |
     python -m pip install --upgrade pip
